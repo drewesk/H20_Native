@@ -24,7 +24,7 @@ export default class SplashPage extends Component {
               icon={{name: 'face'}}
               title="Go to Profile"
               onPress={() =>
-                navigate('Profile', { name: 'Jane' })
+                navigate('Profile', { name: 'Sarah' })
               }
             />
 
@@ -33,7 +33,11 @@ export default class SplashPage extends Component {
               backgroundColor='olive'
               raised
               icon={{name: 'room'}}
-              title='Use Current Location' />
+              title='Use Current Location'
+              onPress={() =>
+                navigate('WebMap', { location: 'Boulder, CO' })
+              }
+            />
           </View>
 
             <Text  h3>or Enter ZIP</Text>

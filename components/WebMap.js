@@ -3,21 +3,6 @@ import { StyleSheet, View, ScrollView, WebView, Image } from 'react-native';
 
 import { Header, Text, Icon, Button, FormLabel, FormInput, Avatar, SocialIcon, Card, ListItem } from 'react-native-elements';
 
-const months = [
- {
-    name: 'Jan',
- },
- {
-    name: 'Feb',
- },
- {
-    name: 'March',
- },
- {
-    name: 'April',
- }
-]
-
 
 export default class Profile extends Component {
   render() {
@@ -30,51 +15,6 @@ export default class Profile extends Component {
           outerContainerStyles={{ backgroundColor: '#3D6DCC' }}
           innerContainerStyles={{ justifyContent: 'space-around',}}
         />
-
-        <ScrollView
-          horizontal={false}
-          style={styles.footerWrapperNC}
-          contentContainerStyle={ styles.profileWrap }>
-          <Text h3 style={styles.welcome}>Welcome Back Sarah!</Text>
-          <Avatar
-            large
-            source={{uri: "https://www.shareicon.net/data/2016/09/01/822711_user_512x512.png"}}
-            onPress={() => console.log("Works!")}
-            activeOpacity={0.7}
-          />
-          <View style={ styles.socialBar } >
-            <SocialIcon
-              light
-              type='twitter'
-            />
-
-            <SocialIcon
-              light
-              type='github'
-            />
-
-            <SocialIcon
-              light
-              type='facebook'
-            />
-          </View>
-
-          <Card width={200}>
-            <Text>
-              Water Usage
-            </Text>
-            { months.map((m, i) => {
-              return (
-                <ListItem
-                  key={i}
-                  title={m.name}
-                  leftIcon={{name: 'opacity'}}
-                />
-              );
-            })
-          }
-        </Card>
-        </ScrollView>
         <WebView
           automaticallyAdjustContentInsets={false}
           source={{ uri: 'https://water.usgs.gov/wsc/a_api/index2.html' }}
