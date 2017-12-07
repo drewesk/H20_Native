@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, ScrollView, WebView, Image } from 'react-native';
-
 import { Header, Text, Icon, Button, FormLabel, FormInput, Avatar, SocialIcon, Card, ListItem } from 'react-native-elements';
 
 const months = [
@@ -20,7 +19,11 @@ const months = [
 
 
 export default class Profile extends Component {
+  
   render() {
+
+    const { navigate } = this.props.navigation;
+
     return (
       <View style={styles.container}>
         <Header
@@ -69,13 +72,18 @@ export default class Profile extends Component {
                   key={i}
                   title={m.name}
                   leftIcon={{name: 'opacity'}}
+                  onPress={() =>
+                    navigate('WaterUsage')
+                  }
                 />
               );
             })
           }
         </Card>
+
         </ScrollView>
         <WebView
+          style={ styles.webView}
           automaticallyAdjustContentInsets={false}
           source={{ uri: 'https://water.usgs.gov/wsc/a_api/index2.html' }}
           javaScriptEnabled={true}
@@ -104,4 +112,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     marginTop: 0,
   },
+  webView: {
+    marginTop: -130,
+  }
 });

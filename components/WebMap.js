@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, ScrollView, WebView, Image } from 'react-native';
+import { StyleSheet, View, ScrollView, WebView, Image, Animated } from 'react-native';
 
 import { Header, Text, Icon, Button, FormLabel, FormInput, Avatar, SocialIcon, Card, ListItem } from 'react-native-elements';
 
 
-export default class Profile extends Component {
+export default class WebMap extends Component {
+
   render() {
     return (
       <View style={styles.container}>
@@ -17,7 +18,7 @@ export default class Profile extends Component {
         />
         <WebView
           automaticallyAdjustContentInsets={false}
-          source={{ uri: 'https://water.usgs.gov/wsc/a_api/index2.html' }}
+          source={{ uri: 'http://127.0.0.1:8080/' }}
           javaScriptEnabled={true}
           domStorageEnabled={true}
           decelerationRate="normal"
