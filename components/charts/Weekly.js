@@ -6,17 +6,11 @@ import { Pie } from 'react-native-pathjs-charts';
 export default class Weekly extends Component {
 render() {
     let data = [{
-      "name": "Washington",
-      "population": 7694980
+      "name": "Total",
+      "amount": 28
     }, {
-      "name": "Oregon",
-      "population": 2584160
-    }, {
-      "name": "Minnesota",
-      "population": 6590667
-    }, {
-      "name": "Alaska",
-      "population": 7284698
+      "name": "Daily Avg",
+      "amount": 4
     }]
 
     let options = {
@@ -48,9 +42,9 @@ render() {
     return (
       <View>
         <Pie
-          data={data}
-          options={options}
-          accessorKey="population" />
+          data={ data }
+          options={ options }
+          accessorKey="amount" height={300} width={300} />
       </View>
     )
   }

@@ -13,7 +13,11 @@ export default class Profile extends Component {
       <View style={styles.container}>
         <Header
           statusBarProps={{ barStyle: 'light-content' }}
-          leftComponent={{ icon: 'water-pump', type: 'material-community', color: '#fff' }}
+          leftComponent={ <Avatar
+                      small
+                      source={{uri: "https://www.shareicon.net/data/2016/09/01/822711_user_512x512.png"}}
+                      activeOpacity={ 0.7 }
+                    /> }
           centerComponent={{ text: 'Profile', style: { color: '#fff'} }}
           rightComponent={{ icon: 'share-apple', type: 'evilicon' }}
           outerContainerStyles={{ backgroundColor: '#3D6DCC' }}
@@ -24,13 +28,7 @@ export default class Profile extends Component {
           horizontal={ false }
           style={ styles.footerWrapperNC }
           contentContainerStyle={ styles.profileWrap }>
-          <Avatar
-            large
-            source={{uri: "https://www.shareicon.net/data/2016/09/01/822711_user_512x512.png"}}
-            activeOpacity={ 0.7 }
-          />
 
-        <Card width={200}>
           <Button
             large
             raised
@@ -49,7 +47,6 @@ export default class Profile extends Component {
             raised
             icon={{ name: 'chemical-weapon', type: 'material-community' }}
             title='Watershed' />
-        </Card>
 
         </ScrollView>
       </View>
@@ -60,7 +57,7 @@ export default class Profile extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#FFF',
   },
   profileWrap: {
     flexWrap: 'wrap',

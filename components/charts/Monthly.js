@@ -76,7 +76,7 @@ export default class Monthly extends Component {
 
     return (
       <View>
-        <StockLine data={data} options={options} xKey='x' yKey='y' />
+        <StockLine data={data} options={options} xKey='x' yKey='y' height={250} width={250}/>
       </View>
     )
   }

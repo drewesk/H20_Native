@@ -8,15 +8,6 @@ import Current from './charts/Current';
 import Weekly from './charts/Weekly';
 import Monthly from './charts/Monthly';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#f7f7f7',
-  },
-});
-
 export default class WaterUsage extends Component {
   constructor () {
     super()
@@ -64,23 +55,27 @@ export default class WaterUsage extends Component {
         selectedIndex={selectedIndex}
         buttons={buttons} />
 
-        <ScrollView>
+        <Card>
 
-          <Card>
-            <Monthly/>
-          </Card>
+          {(selectedIndex === 2) ? <Monthly /> : []}
+          {(selectedIndex === 1) ? <Weekly/> : []}
+          {(selectedIndex === 0) ? <Current/> : []}
 
-          <Card>
-            <Weekly/>
-          </Card>
-
-          <Card>
-            <Current/>
-          </Card>
-
-        </ScrollView>
+        </Card>
 
       </View>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f7f7f7',
+  },
+  // chartsCenter: {
+  //   flex: 1
+  // }
+});

@@ -183,7 +183,7 @@ export default class Current extends Component {
 
     return (
       <View>
-        <SmoothLine data={data} options={options} xKey='x' yKey='y' />
+        <SmoothLine data={data} options={options} xKey='x' yKey='y' height={250} width={250} />
       </View>
     );
   }
