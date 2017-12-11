@@ -25,41 +25,40 @@ export default class SplashPage extends Component {
     const { navigate } = this.props.navigation;
 
       return (
-          <ImageBackground style={ styles.container } source={require('../wave.jpg')}>
+          <ImageBackground style={ styles.container } source={ require('../wave.jpg' )}>
             <Text h1 style={styles.welcome} onPress={ this.spring.bind(this) }>
               HelloH20
             </Text>
             <Animated.Image
-              style={{ width: 227, height: 200, transform: [{scale: this.springValue}], marginTop: -100}}
-              source={{uri: 'https://s3.amazonaws.com/media-p.slid.es/uploads/alexanderfarennikov/images/1198519/reactjs.png'}}/>
+              style={{ width: 150, height: 200, transform: [{scale: this.springValue}], marginTop: -100}}
+              source={ require('../water-logo.png') }/>
 
             <View style={ styles.buttonGroup }>
               <Button
+                large
                 style={ styles.button }
                 color='black'
                 backgroundColor='teal'
                 raised
-                icon={{ name: 'face' }}
-                title="Go to Profile"
+                icon={{ name: 'human-greeting', type: 'material-community' }}
+                title="Profile"
                 onPress={() =>
                   navigate('Profile', { name: 'Sarah' })
                 }
               />
 
               <Button
+                large
                 color='black'
                 backgroundColor='olive'
                 raised
-                icon={{name: 'room'}}
-                title='Use Current Location'
+                icon={{ name: 'home-map-marker', type: 'material-community' }}
+                title='Current Location'
                 onPress={() =>
                   navigate('WebMap', { location: 'Boulder, CO' })
                 }
               />
             </View>
-
-            <Text h3>or Enter ZIP</Text>
-            <FormInput backgroundColor='black' textAlign='center' />
           </ImageBackground>
       );
     }
@@ -74,10 +73,8 @@ export default class SplashPage extends Component {
       justifyContent: 'center',
       alignItems: 'center',
     },
-    // backgroundImage: {
-    //   position: 'absolute',
-    // },
     welcome: {
+      fontSize: 70,
       marginTop: 30,
       marginBottom: 100,
       color: 'black',
@@ -88,5 +85,9 @@ export default class SplashPage extends Component {
     buttonGroup: {
       marginBottom: 50,
       padding: 25,
+    },
+    waterLogo: {
+      height: 50,
+      width: 50,
     }
   });

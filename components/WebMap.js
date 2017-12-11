@@ -11,11 +11,12 @@ export default class WebMap extends Component {
       <View style={styles.container}>
         <Header
           statusBarProps={{ barStyle: 'light-content' }}
-          leftComponent={{ icon: 'menu', color: '#fff' }}
-          centerComponent={{ text: 'HelloH20', style: { color: '#fff'} }}
-          outerContainerStyles={{ backgroundColor: '#3D6DCC' }}
+          leftComponent={{ icon: 'water-pump', type: 'material-community', color: '#fff' }}
+          centerComponent={{ text: 'Map', style: { color: '#fff'} }}
+          outerContainerStyles={{ backgroundColor: 'black' }}
           innerContainerStyles={{ justifyContent: 'space-around',}}
         />
+
         <WebView
           automaticallyAdjustContentInsets={false}
           source={{ uri: 'http://127.0.0.1:8080' }}
