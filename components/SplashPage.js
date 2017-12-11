@@ -3,7 +3,8 @@ import { StyleSheet, View, ImageBackground, Animated, Image } from 'react-native
 import { Button, FormLabel, FormInput, Text } from 'react-native-elements';
 
 export default class SplashPage extends Component {
-  constructor(){
+
+  constructor() {
     super();
     this.springValue = new Animated.Value(0.5);
   }

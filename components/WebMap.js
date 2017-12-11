@@ -18,7 +18,7 @@ export default class WebMap extends Component {
         />
         <WebView
           automaticallyAdjustContentInsets={false}
-          source={{ uri: 'http://127.0.0.1:8080/' }}
+          source={{ uri: 'http://127.0.0.1:8080' }}
           javaScriptEnabled={true}
           domStorageEnabled={true}
           decelerationRate="normal"
